@@ -1,5 +1,8 @@
+from asyncio import tasks
+
 from fastapi import FastAPI
 from motor.motor_asyncio import AsyncIOMotorClient
+from routes import router
 
 app = FastAPI()
 
@@ -13,6 +16,9 @@ collection = db.tasks
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
+
+app.include_router(router, prefix='/api')
+
 
 
 @app.get("/hello/{name}")

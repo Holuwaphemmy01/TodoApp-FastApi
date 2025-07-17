@@ -25,3 +25,8 @@ async def update_task(task_id: str, task_update: TaskUpdate):
 async def delete_task(task_id: str):
     await delete_existing_task(task_id)
     return None
+
+
+@router.get("/", response_model=TaskResponse)
+async def get_all_tasks():
+    return "Welcome"
