@@ -27,6 +27,6 @@ async def delete_task(task_id: str):
     return None
 
 
-@router.get("/", response_model=TaskResponse)
+@router.get("/")
 async def get_all_tasks():
-    return "Welcome"
+    return {"message":"Welcome"}

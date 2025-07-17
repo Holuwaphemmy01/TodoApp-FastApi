@@ -6,18 +6,16 @@ from routes import router
 
 app = FastAPI()
 
+app.include_router(router, prefix="/api")
 
-MONGO_URL = "mongodb://localhost:27017"
-client = AsyncIOMotorClient(MONGO_URL)
-db = client.todo_db
-collection = db.tasks
+
 
 
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
 
-app.include_router(router, prefix='/api')
+
 
 
 
