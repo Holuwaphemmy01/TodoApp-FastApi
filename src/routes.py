@@ -1,6 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException
-from models import TaskCreate, TaskUpdate, TaskResponse
-from crud import get_all_tasks, create_new_task, update_existing_task, delete_existing_task
+from fastapi import APIRouter
+from src.models import TaskCreate, TaskUpdate, TaskResponse
+from src.crud import get_all_tasks, create_new_task, update_existing_task, delete_existing_task
 from typing import List
 
 router = APIRouter()
@@ -28,5 +28,5 @@ async def delete_task(task_id: str):
 
 
 @router.get("/")
-async def get_all_tasks():
-    return {"message":"Welcome"}
+async def get_developer():
+    return {"message":"Welcome Holuwaphemmy"}

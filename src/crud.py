@@ -1,6 +1,6 @@
 # crud.py
-from database import collection
-from models import TaskCreate, TaskUpdate, TaskResponse
+from src.database import collection
+from src.models import TaskCreate, TaskUpdate, TaskResponse
 from bson import ObjectId
 from typing import List
 
